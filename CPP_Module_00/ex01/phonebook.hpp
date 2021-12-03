@@ -26,8 +26,10 @@ class Phonebook
 	int nb;
 	Phonebook(void);
 	~Phonebook(void);
-
 	Contact contacts[8];
+	int		cmd_add(void);
+	void	cmd_search(void) const;
+	void	print_contact_coord(int i) const;
 };
 
 #endif
