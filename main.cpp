@@ -6,7 +6,7 @@
 /*   By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 21:33:00 by sachouam          #+#    #+#             */
-/*   Updated: 2021/11/28 01:28:10 by sachouam         ###   ########.fr       */
+/*   Updated: 2021/12/02 18:14:26 by sachouam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,45 @@
 
 class Test
 {
-    public:
-    
-        int nb;
+	public:
 
-        Test(void);
-        ~Test(void);
+	int nb;
 
-        void bar(void);
+	Test(void);
+	~Test(void);
+
+	void bar(void);
 };
 
 Test::Test(void)
 {
-    std::cout << "Constructor called" << std::endl;
-    this->nb = 100;
-    this->bar();
+	std::cout << "Constructor called" << std::endl;
+	this->nb = 100;
+	this->bar();
 }
 
 Test::~Test(void)
 {
-    std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 void    Test::bar(void)
 {
-    std::cout << "Member function called bar" << std::endl;
+	std::cout << "Member function called bar" << std::endl;
 }
 
-int
-    main(void)
+	int
+main(void)
 {
-    Test    essaie;    
-    char    buf[255];
+	Test    essaie; 
+	char    buf[255];
 
 
-    std::cout << "PTIT TEST AU CALME" << std::endl << "UN AUTRE TEST" << std::endl;
-    std::cout << essaie.nb << std::endl;
-    //essaie.bar();
-    std::cout << "Put on input please : ";
-    std::cin >> buf;
+	std::cout << "PTIT TEST AU CALME" << std::endl << "UN AUTRE TEST" << std::endl;
+	std::cout << essaie.nb << std::endl;
+	//essaie.bar();
+	std::cout << "Put on input please : ";
+	std::cin >> buf;
 	std::cout << "Here is you input : " << buf << "" << std::endl;
-    return 0;
+	return 0;
 }
