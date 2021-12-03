@@ -6,7 +6,7 @@
 /*   By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 21:51:40 by sachouam          #+#    #+#             */
-/*   Updated: 2021/12/03 00:47:33 by sachouam         ###   ########.fr       */
+/*   Updated: 2021/12/03 14:32:48 by sachouam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Contact::Contact(void)
 {
 	std::cout << "Constructor Contact called" << std::endl;
+	this->index = 0;
 }
 
 Contact::~Contact(void)
