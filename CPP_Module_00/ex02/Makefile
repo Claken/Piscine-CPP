@@ -6,23 +6,23 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2021/12/04 01:18:38 by sachouam         ###   ########.fr        #
+#    Updated: 2021/12/04 21:38:25 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	account
-CC			=	clang++
-CFLAGS		=	-Wall -Wextra -Werror
+CXX			=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	Account.cpp \
-				tests.cpp \
+SRC			=	tests.cpp \
+				Account.cpp \
 
 OBJ			=	$(SRC:%.cpp=%.o)
 
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 			rm -rf $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:58:57 by sachouam          #+#    #+#             */
-/*   Updated: 2021/12/03 23:25:55 by sachouam         ###   ########.fr       */
+/*   Updated: 2021/12/04 21:42:01 by sachouam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ void Phonebook::print_contact_coord(int i) const
 void
 	insert_space_and_string(const std::string str)
 {
-	int i;
-	int j;
-	int size;
+	int 			i;
+	unsigned long	j;
+	int				size;
 
 	i = -1;
 	size = 10 - str.size();
@@ -121,7 +121,7 @@ void Phonebook::cmd_search(void) const
 		std::cout << "Add a contact first please." << std::endl;
 }
 
-int	main(int ac, char **av)
+int	main(void)
 {
 	Phonebook		clist;
 	std::string		cmd;
