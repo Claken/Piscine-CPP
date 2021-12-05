@@ -6,30 +6,48 @@
 
 class Contact
 {
+	private:
+
+	int 				_index;
+	std::string			_first_name;
+	std::string			_last_name;
+	std::string			_nickname;
+	std::string			_phone_number;
+	std::string			_darkest_secret;
+
 	public:
 
-	Contact(void);
-	~Contact(void);
-
-	int index;
-	std::string		first_name;
-	std::string		last_name;
-	std::string		nickname;
-	std::string		phone_number;
-	std::string		darkest_secret;
+	Contact(void) : _index(0) {};
+	~Contact(void) {};
+	std::string			getFirstName(void) const;
+	std::string			getLastName(void) const;
+	std::string			getNickname(void) const;
+	std::string			getPhoneNumber(void) const;
+	std::string			getDarkestSecret(void) const;
+	int					getIndex(void) const;
+	void				setFirstName(std::string str);
+	void				setLastName(std::string str);
+	void				setNickname(std::string str);
+	void				setPhoneNumber(std::string str);
+	void				setDarkestSecret(std::string str);
+	void				setIndex(int nb);
 };
 
 class Phonebook
 {
+	private :
+
+	int 				nb;
+	Contact 			contacts[8];
+	
 	public:
 
-	int nb;
-	Phonebook(void);
-	~Phonebook(void);
-	Contact contacts[8];
-	int		cmd_add(void);
-	void	cmd_search(void) const;
-	void	print_contact_coord(int i) const;
+	Phonebook(void) : nb(0) {};
+	~Phonebook(void) {};
+	int					cmd_add(void);
+	void				cmd_search(void) const;
+	void				print_contact_coord(int i) const;
+	int					getNb(void) const;
 };
 
 #endif

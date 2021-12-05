@@ -6,7 +6,7 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2021/12/04 21:37:55 by sachouam         ###   ########.fr        #
+#    Updated: 2021/12/06 00:36:00 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	phonebook.cpp \
-				tructor.cpp \
+				contact_fts.cpp \
 
 OBJ			=	$(SRC:%.cpp=%.o)
 
