@@ -1,5 +1,6 @@
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -8,6 +9,7 @@ int Account::_totalNbWithdrawals = 0;
 
 Account::Account( int initial_deposit )
 {
+	Account::_displayTimestamp();
 	this->_amount = initial_deposit;
 	this->_accountIndex = Account::_nbAccounts;
 	std::cout << "index:";
@@ -21,6 +23,7 @@ Account::Account( int initial_deposit )
 
 Account::~Account( void )
 {
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "closed" << std::endl;
@@ -48,6 +51,7 @@ int 	Account::getNbWithdrawals( void )
 
 void 	Account::displayAccountsInfos( void )
 {
+	Account::_displayTimestamp();
 	std::cout << "accounts:" << Account::_nbAccounts << ";";
 	std::cout << "total:" << Account::_totalAmount << ";";
 	std::cout << "deposits:" << Account::_totalNbDeposits << ";";
@@ -57,6 +61,7 @@ void 	Account::displayAccountsInfos( void )
 
 void	Account::makeDeposit( int deposit )
 {
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "p_amount:" << this->_amount << ";";
 	std::cout << "deposit:" << deposit << ";";
@@ -74,6 +79,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 {
 	bool result;
 
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "p_amount:" << this->_amount << ";";
 	if (withdrawal < this->_amount)
@@ -103,7 +109,7 @@ int		Account::checkAmount( void ) const
 
 void	Account::displayStatus( void ) const
 {
-	//std::cout << "displayStatus" << std::endl;
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << Account::_amount << ";";
 	std::cout << "deposits:" << Account::_nbDeposits << ";";
@@ -113,6 +119,6 @@ void	Account::displayStatus( void ) const
 
 void	Account::_displayTimestamp( void )
 {
-	std::cout << "_displayTimestamp" << std::endl;
-
+	  std::time_t t = std::time(0);
+	  std::cout << "[" << t << "]" << " ";
 }
