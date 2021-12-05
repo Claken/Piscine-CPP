@@ -6,16 +6,18 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2021/12/05 03:18:51 by sachouam         ###   ########.fr        #
+#    Updated: 2021/12/05 18:43:50 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	account
+NAME		=	zombie
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	tests.cpp \
-				Account.cpp \
+SRC			=	main.cpp \
+				Zombie.cpp \
+				newZombie.cpp \
+				randomChump.cpp \
 
 OBJ			=	$(SRC:%.cpp=%.o)
 

@@ -12,10 +12,8 @@ Account::Account( int initial_deposit )
 	Account::_displayTimestamp();
 	this->_amount = initial_deposit;
 	this->_accountIndex = Account::_nbAccounts;
-	std::cout << "index:";
-	std::cout << this->_accountIndex << ";";
-	std::cout << "amount:";
-	std::cout << this->_amount << ";";
+	std::cout << "index:" << this->_accountIndex << ";";
+	std::cout << "amount:" << this->_amount << ";";
 	Account::_nbAccounts++;
 	Account::_totalAmount += this->_amount;
 	std::cout << "created" << std::endl;
@@ -119,9 +117,9 @@ void	Account::displayStatus( void ) const
 
 void	Account::_displayTimestamp( void )
 {
-	time_t rawtime;
-	struct tm * timeinfo;
-	char	buffer[255];
+	time_t		rawtime;
+	struct tm	*timeinfo;
+	char		buffer[255];
 
 	time(&rawtime);
 	timeinfo = localtime(&rawtime);
