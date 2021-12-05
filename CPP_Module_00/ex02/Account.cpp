@@ -82,7 +82,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "p_amount:" << this->_amount << ";";
-	if (withdrawal < this->_amount)
+	if (withdrawal <= this->_amount)
 	{
 		std::cout << "withdrawal:" << withdrawal << ";";
 		this->_amount -= withdrawal;
@@ -119,6 +119,12 @@ void	Account::displayStatus( void ) const
 
 void	Account::_displayTimestamp( void )
 {
-	  std::time_t t = std::time(0);
-	  std::cout << "[" << t << "]" << " ";
+	time_t rawtime;
+	struct tm * timeinfo;
+	char	buffer[255];
+
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+	strftime(buffer, 255, "[%G%m%d_%H%M%S] ", timeinfo);
+	std::cout << buffer;
 }
