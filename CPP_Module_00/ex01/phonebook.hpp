@@ -46,7 +46,7 @@ class Phonebook
 	Phonebook(void) : nb(0) {};
 	~Phonebook(void) {};
 	int					cmd_add(void);
-	void				cmd_search(void) const;
+	int					cmd_search(void) const;
 	void				print_contact_coord(int i) const;
 	int					getNb(void) const;
 	void				setNb(int n);

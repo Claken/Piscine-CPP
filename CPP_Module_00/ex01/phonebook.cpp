@@ -6,7 +6,7 @@
 /*   By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:58:57 by sachouam          #+#    #+#             */
-/*   Updated: 2021/12/08 14:57:21 by sachouam         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:22:43 by sachouam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	Phonebook::setOverwrite(int n)
 	this->overwrite = n;
 }
 
-int Phonebook::cmd_add(void)
+int		Phonebook::cmd_add(void)
 {
 	std::string	str;
 	int			i;
@@ -80,7 +80,7 @@ int Phonebook::cmd_add(void)
 	return (1);
 }
 
-void Phonebook::print_contact_coord(int i) const
+void	Phonebook::print_contact_coord(int i) const
 {
 	std::cout << std::endl;
 	std::cout << "first name     : ";
@@ -97,7 +97,7 @@ void Phonebook::print_contact_coord(int i) const
 }
 
 void
-	insert_space_and_string(const std::string str)
+		insert_space_and_string(const std::string str)
 {
 	int 			i;
 	unsigned long	j;
@@ -119,7 +119,7 @@ void
 	std::cout << "|";
 }
 
-void Phonebook::cmd_search(void) const
+int 	Phonebook::cmd_search(void) const
 {
 	int			i;
 	int			index;
@@ -127,7 +127,7 @@ void Phonebook::cmd_search(void) const
 	i = 0;
 	if (this->nb)
 	{
-		std::cout << "     index|" << "first name|"
+		std::cout << std::endl << "     index|" << "first name|"
 		<< " last name|" << "  nickname|" << std::endl;
 		while (i < this->nb)
 		{
@@ -138,10 +138,13 @@ void Phonebook::cmd_search(void) const
 			std::cout << std::endl;
 			i++;
 		}
+		std::cout << std::endl;
 		while (1)
 		{
-			std::cout << std::endl << "Type a digit please : ";
+			std::cout << "Type a digit please : ";
 			std::cin >> index;
+			if (std::cin.eof())
+				return (0);
 			if (!std::cin.fail())
 				break ;
 			else
@@ -157,34 +160,10 @@ void Phonebook::cmd_search(void) const
 				this->print_contact_coord(i);
 			i++;
 		}
+		std::cin.clear();
+		std::cin.ignore(10000, '\n');
 	}
 	else
 		std::cout << "Add a contact first please." << std::endl;
-}
-
-int	main(void)
-{
-	Phonebook		clist;
-	std::string		cmd;
-	clist.setOverwrite(8);
-	int i = 0;
-
-	while (1)
-	{
-		std::cout << "Type SEARCH, ADD, or EXIT commande please : ";
-		getline(std::cin, cmd);
-		if (cmd == "SEARCH")
-			clist.cmd_search();
-		else if (cmd == "ADD")
-		{
-			if (clist.getNb() == 8 && clist.getOverwrite() == 8)
-				clist.setOverwrite(0);
-			if (!clist.cmd_add())
-				break ;
-		}
-		else if (cmd == "EXIT" || std::cin.eof())
-			break ;
-		std::cout << i++ << std::endl;
-	}
-	return (0);
+	return (1);
 }
