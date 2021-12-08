@@ -1,6 +1,6 @@
-#ifndef PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
 
-# define PHONEBOOK_H
+# define PHONEBOOK_HPP
 
 #include <iostream>
 
@@ -37,8 +37,9 @@ class Phonebook
 {
 	private :
 
-	int 				nb;
-	Contact 			contacts[8];
+	int					nb;
+	int					overwrite;
+	Contact				contacts[8];
 	
 	public:
 
@@ -48,6 +49,9 @@ class Phonebook
 	void				cmd_search(void) const;
 	void				print_contact_coord(int i) const;
 	int					getNb(void) const;
+	void				setNb(int n);
+	int					getOverwrite(void) const;
+	void				setOverwrite(int n);
 };
 
 #endif

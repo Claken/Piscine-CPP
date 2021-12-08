@@ -6,53 +6,77 @@
 /*   By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 12:58:57 by sachouam          #+#    #+#             */
-/*   Updated: 2021/12/06 00:36:08 by sachouam         ###   ########.fr       */
+/*   Updated: 2021/12/08 14:57:21 by sachouam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-int	Phonebook::getNb(void) const
+int		Phonebook::getNb(void) const
 {
 	return (this->nb);
 }
 
+void	Phonebook::setNb(int n)
+{
+	this->nb = n;
+}
+
+int		Phonebook::getOverwrite(void) const
+{
+	return (this->overwrite);
+}
+
+void	Phonebook::setOverwrite(int n)
+{
+	this->overwrite = n;
+}
+
 int Phonebook::cmd_add(void)
 {
-	std::string str;
-	
+	std::string	str;
+	int			i;
+
+	if (this->overwrite < 8)
+		i = this->overwrite;
+	else
+		i = this->nb;
+
 	std::cout << "first name : ";
 	getline(std::cin, str);
 	if (std::cin.eof())
 		return (0);
-	this->contacts[this->nb].setFirstName(str);
+	this->contacts[i].setFirstName(str);
 
 	std::cout << "last name : ";
 	getline(std::cin, str);
 	if (std::cin.eof())
 		return (0);
-	this->contacts[this->nb].setLastName(str);
+	this->contacts[i].setLastName(str);
 
 	std::cout << "nickname : ";
 	getline(std::cin, str);
 	if (std::cin.eof())
 		return (0);
-	this->contacts[this->nb].setNickname(str);
+	this->contacts[i].setNickname(str);
 
 	std::cout << "phone number : ";
 	getline(std::cin, str);
 	if (std::cin.eof())
 		return (0);
-	this->contacts[this->nb].setPhoneNumber(str);
+	this->contacts[i].setPhoneNumber(str);
 
 	std::cout << "darkest secret : ";
 	getline(std::cin, str);
 	if (std::cin.eof())
 		return (0);
-	this->contacts[this->nb].setDarkestSecret(str);
-	
-	this->contacts[this->nb].setIndex(this->nb + 1);
-	this->nb++;
+	this->contacts[i].setDarkestSecret(str);
+	this->contacts[i].setIndex(i + 1);
+
+	if (this->overwrite < 8)
+		this->overwrite++;
+	else
+		this->nb++;
 	return (1);
 }
 
@@ -142,24 +166,25 @@ int	main(void)
 {
 	Phonebook		clist;
 	std::string		cmd;
+	clist.setOverwrite(8);
+	int i = 0;
 
 	while (1)
 	{
+		std::cout << "Type SEARCH, ADD, or EXIT commande please : ";
 		getline(std::cin, cmd);
 		if (cmd == "SEARCH")
 			clist.cmd_search();
 		else if (cmd == "ADD")
 		{
-			if (clist.getNb() < 8)
-			{
-				if (!clist.cmd_add())
-					break ;
-			}
-			else
-				std::cout << "Sorry. The phonebook is full." << std::endl;
+			if (clist.getNb() == 8 && clist.getOverwrite() == 8)
+				clist.setOverwrite(0);
+			if (!clist.cmd_add())
+				break ;
 		}
 		else if (cmd == "EXIT" || std::cin.eof())
 			break ;
+		std::cout << i++ << std::endl;
 	}
 	return (0);
 }
