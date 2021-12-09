@@ -6,7 +6,7 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2021/12/09 19:18:34 by sachouam         ###   ########.fr        #
+#    Updated: 2021/12/09 19:03:41 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,9 @@ CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	main.cpp \
+				HumanA.cpp \
+				HumanB.cpp \
+				Weapon.cpp \
 
 OBJ			=	$(SRC:%.cpp=%.o)
 
