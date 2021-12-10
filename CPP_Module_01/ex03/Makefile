@@ -6,11 +6,11 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2021/12/09 21:14:11 by sachouam         ###   ########.fr        #
+#    Updated: 2021/12/10 13:17:01 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	brain
+NAME		=	violence
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
