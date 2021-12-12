@@ -14,12 +14,15 @@ int
 		case 0:
 			folle.debug();
 			std::cout << std::endl;
+			__attribute__((fallthrough));
 		case 1:
 			folle.info();
 			std::cout << std::endl;
+			__attribute__((fallthrough));
 		case 2:
 			folle.warning();
 			std::cout << std::endl;
+			__attribute__((fallthrough));
 		case 3:
 			folle.error();
 			break ;
