@@ -14,6 +14,8 @@ static int
 		std::cout << "Error: s1 is empty" << std::endl;
 	else if (what == 3)
 		std::cout << "Error: s2 is empty" << std::endl;
+	else if (what == 4)
+		std::cout << "Error: empty file" << std::endl;
 	return 0;
 }
 
@@ -44,16 +46,30 @@ int
 	}
 
 	std::ofstream	ofs(newFile.data());
+	int i = 0;
 	while (getline(ifs, line))
 	{
-		if (line == str1)
-			ofs << str2.data() << std::endl;
-		else
-			ofs << line.data() << std::endl;
+		unsigned long j = 0;
+		while (j < line.size())
+		{
+			std::size_t found = line.find(str1, j);
+			if (found != std::string::npos)
+			{
+				line.erase(found, str1.length());
+				line.insert(found, str2);
+				j = (found + str2.size());
+			}
+			else
+				j++;
+		}
+		ofs << line.data() << std::endl;
+		i++;
 	}
 
 	ifs.close();
 	ofs.close();
+	if (!line.length() && i == 0)
+		return (str_error(4, NULL));
 	return (1);
 }
 
