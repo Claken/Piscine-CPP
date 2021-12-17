@@ -9,13 +9,13 @@ Fixed::Fixed(void)
 Fixed::Fixed(const int nbi)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_fixed = nbi * (1 << (this->_fracBitsNb));
+	this->_fixed = nbi * (1 << this->_fracBitsNb);
 }
 
 Fixed::Fixed(const float nbf)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_fixed = roundf(nbf * (2^(this->_fracBitsNb)));
+	this->_fixed = roundf(nbf * (1 << this->_fracBitsNb));
 }
 
 Fixed::~Fixed(void)
@@ -41,14 +41,12 @@ void			Fixed::setRawBits(int const raw)
 
 float			Fixed::toFloat(void) const
 {
-	std::cout << std::endl << "toFloat function called" << std::endl;
-	return (this->_fixed / (2^(this->_fracBitsNb)));
+	return (((float)this->_fixed) / (1 << this->_fracBitsNb));
 }
 
 int				Fixed::toInt(void) const
 {
-	std::cout << std::endl << "toInt function called" << std::endl;
-	return (this->_fixed / (1 << (this->_fracBitsNb)));
+	return (this->_fixed / (1 << this->_fracBitsNb));
 }
 
 Fixed&			Fixed::operator=(Fixed const & instance)
