@@ -55,7 +55,7 @@ Fixed&			Fixed::operator-(Fixed const & instance)
 
 Fixed&			Fixed::operator*(Fixed const & instance)
 {
-	this->_fixed *= instance.getRawBits();
+	this->_fixed *= instance.toFloat();
 	return (*this);
 }
 
@@ -65,34 +65,60 @@ Fixed&			Fixed::operator/(Fixed const & instance)
 	return (*this);
 }
 
-bool			Fixed::operator!=(Fixed const & instance)
+bool			Fixed::operator!=(Fixed const & instance) const
 {
-	this->_fixed != instance.getRawBits() ? return true : return false;
+	return (this->_fixed != instance.getRawBits() ? true : false);
 }
 
-bool			Fixed::operator==(Fixed const & instance)
+bool			Fixed::operator==(Fixed const & instance) const
 {
-	this->_fixed == instance.getRawBits() ? return true : return false;
+	return (this->_fixed == instance.getRawBits() ? true : false);
 }
 
-bool			Fixed::operator>=(Fixed const & instance)
+bool			Fixed::operator>=(Fixed const & instance) const
 {
-	this->_fixed >= instance.getRawBits() ? return true : return false;
+	return (this->_fixed >= instance.getRawBits() ? true : false);
 }
 
-bool			Fixed::operator<=(Fixed const & instance)
+bool			Fixed::operator<=(Fixed const & instance) const
 {
-	this->_fixed <= instance.getRawBits() ? return true : return false;
+	return (this->_fixed <= instance.getRawBits() ? true : false);
 }
 
-bool			Fixed::operator>(Fixed const & instance)
+bool			Fixed::operator>(Fixed const & instance) const
 {
-	this->_fixed > instance.getRawBits() ? return true : return false;
+	return (this->_fixed > instance.getRawBits() ? true : false);
 }
 
-bool			Fixed::operator<(Fixed const & instance)
+bool			Fixed::operator<(Fixed const & instance) const
 {
-	this->_fixed < instance.getRawBits() ? return true : return false;
+	return (this->_fixed < instance.getRawBits() ? true : false);
+}
+
+Fixed&			Fixed::operator++()
+{
+	++this->_fixed;
+	return (*this);
+}
+
+Fixed			Fixed::operator++(int)
+{
+	Fixed copy(*this);
+	++(*this);
+	return (copy);
+}
+
+Fixed&			Fixed::operator--()
+{
+	--this->_fixed;
+	return (*this);
+}
+
+Fixed			Fixed::operator--(int)
+{
+	Fixed copy(*this);
+	--(*this);
+	return (copy);
 }
 
 std::ostream&	operator<<(std::ostream & output, Fixed const & instance)
