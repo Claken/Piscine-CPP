@@ -2,12 +2,12 @@
 
 Fixed::Fixed(const int nbi)
 {
-	this->_fixed = nbi * (1 << this->_fracBitsNb);
+	this->_rawBits = nbi * (1 << this->_fracBitsNb);
 }
 
 Fixed::Fixed(const float nbf)
 {
-	this->_fixed = roundf(nbf * (1 << this->_fracBitsNb));
+	this->_rawBits = roundf(nbf * (1 << this->_fracBitsNb));
 }
 
 Fixed::Fixed(Fixed const & instance)
@@ -17,87 +17,89 @@ Fixed::Fixed(Fixed const & instance)
 
 int				Fixed::getRawBits(void) const
 {
-	return (this->_fixed);
+	return (this->_rawBits);
 }
 
 void			Fixed::setRawBits(int const raw)
 {
-	this->_fixed = raw;
+	this->_rawBits = raw;
 }
 
 float			Fixed::toFloat(void) const
 {
-	return (((float)this->_fixed) / (1 << this->_fracBitsNb));
+	return (((float)this->_rawBits) / (1 << this->_fracBitsNb));
 }
 
 int				Fixed::toInt(void) const
 {
-	return (this->_fixed / (1 << this->_fracBitsNb));
+	return (this->_rawBits / (1 << this->_fracBitsNb));
 }
 
 Fixed&			Fixed::operator=(Fixed const & instance)
 {
-	this->_fixed = instance.getRawBits();
+	this->_rawBits = instance.getRawBits();
 	return (*this);
 }
 
 Fixed&			Fixed::operator+(Fixed const & instance)
 {
-	this->_fixed += instance.getRawBits();
+	this->_rawBits += instance.getRawBits();
 	return (*this);
 }
 
 Fixed&			Fixed::operator-(Fixed const & instance)
 {
-	this->_fixed -= instance.getRawBits();
+	this->_rawBits -= instance.getRawBits();
 	return (*this);
 }
 
 Fixed&			Fixed::operator*(Fixed const & instance)
 {
-	this->_fixed *= instance.toFloat();
+	this->_rawBits = (int64_t)this->_rawBits
+		* (int64_t)instance.getRawBits() / (1 << this->_fracBitsNb);
 	return (*this);
 }
 
 Fixed&			Fixed::operator/(Fixed const & instance)
 {
-	this->_fixed /= instance.getRawBits();
+	this->_rawBits = ((int64_t)this->_rawBits
+		* (1 << this->_fracBitsNb)) / instance.getRawBits();
 	return (*this);
 }
 
 bool			Fixed::operator!=(Fixed const & instance) const
 {
-	return (this->_fixed != instance.getRawBits() ? true : false);
+	return (this->_rawBits != instance.getRawBits() ? true : false);
 }
 
 bool			Fixed::operator==(Fixed const & instance) const
 {
-	return (this->_fixed == instance.getRawBits() ? true : false);
+	return (this->_rawBits == instance.getRawBits() ? true : false);
 }
 
 bool			Fixed::operator>=(Fixed const & instance) const
 {
-	return (this->_fixed >= instance.getRawBits() ? true : false);
+	return (this->_rawBits >= instance.getRawBits() ? true : false);
 }
 
 bool			Fixed::operator<=(Fixed const & instance) const
 {
-	return (this->_fixed <= instance.getRawBits() ? true : false);
+	return (this->_rawBits <= instance.getRawBits() ? true : false);
 }
 
 bool			Fixed::operator>(Fixed const & instance) const
 {
-	return (this->_fixed > instance.getRawBits() ? true : false);
+	return (this->_rawBits > instance.getRawBits() ? true : false);
 }
 
 bool			Fixed::operator<(Fixed const & instance) const
 {
-	return (this->_fixed < instance.getRawBits() ? true : false);
+	return (this->_rawBits < instance.getRawBits() ? true : false);
 }
 
 Fixed&			Fixed::operator++()
 {
-	++this->_fixed;
+	++this->_rawBits;
 	return (*this);
 }
 
@@ -110,7 +112,7 @@ Fixed			Fixed::operator++(int)
 
 Fixed&			Fixed::operator--()
 {
-	--this->_fixed;
+	--this->_rawBits;
 	return (*this);
 }
 

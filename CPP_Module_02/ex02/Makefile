@@ -6,7 +6,7 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2021/12/15 14:01:27 by sachouam         ###   ########.fr        #
+#    Updated: 2021/12/20 19:26:15 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,5 +31,8 @@ fclean:		clean
 			rm -rf $(NAME)
 
 re:			fclean all
+
+run:
+			make && ./fixed
 
 .PHONY:		all clean fclean re
