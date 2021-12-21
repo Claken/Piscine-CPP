@@ -6,11 +6,11 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2021/12/20 23:16:18 by sachouam         ###   ########.fr        #
+#    Updated: 2021/12/21 13:39:23 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	fixed
+NAME		=	claptrap
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
@@ -33,6 +33,6 @@ fclean:		clean
 re:			fclean all
 
 run:
-			make && ./fixed
+			make && ./$(NAME)
 
 .PHONY:		all clean fclean re

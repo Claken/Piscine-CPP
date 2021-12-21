@@ -18,7 +18,7 @@ void	ClapTrap::attack(std::string const & target)
 {
 	std::cout << "ClapTrap " << this->_name;
 	std::cout << " attack " << target;
-	std::cout << ", causing " this->_attackDamage;
+	std::cout << ", causing " << this->_attackDamage;
 	std::cout << " points of damage!" << std::endl;
 }
 
