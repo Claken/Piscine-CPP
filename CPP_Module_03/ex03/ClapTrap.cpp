@@ -46,3 +46,4 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const & instance)
 	*this = instance;
 	return (*this);
 }
+
