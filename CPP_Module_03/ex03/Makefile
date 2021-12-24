@@ -6,11 +6,11 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2021/12/22 20:36:47 by sachouam         ###   ########.fr        #
+#    Updated: 2021/12/24 01:35:38 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	claptrap
+NAME		=	diamondtrap
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
@@ -18,6 +18,7 @@ SRC			=	main.cpp \
 				ClapTrap.cpp \
 				ScavTrap.cpp \
 				FragTrap.cpp \
+				DiamondTrap.cpp \
 
 OBJ			=	$(SRC:%.cpp=%.o)
 

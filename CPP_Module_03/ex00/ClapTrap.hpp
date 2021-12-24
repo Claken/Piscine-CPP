@@ -24,6 +24,10 @@ class ClapTrap
 	void			takeDamage(unsigned int amount) const;
 	void			beRepaired(unsigned int amount) const;
 
+	std::string		getName(void) const;
+	int				getHitPoints(void) const;
+	int				getEnergyPoints(void) const;
+	int				getAttackDamage(void) const;
 	ClapTrap&		operator=(ClapTrap const & instance);
 
 };

@@ -4,11 +4,17 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
+	protected :
+
+	static const int	_HP = 100;
+	static const int	_EP = 100;
+	static const int	_AD = 30;
+
 	public :
 
-	FragTrap(void) {};
+	FragTrap(void);
 	FragTrap(std::string name);
 	FragTrap(FragTrap const & instance);
 	~FragTrap(void);

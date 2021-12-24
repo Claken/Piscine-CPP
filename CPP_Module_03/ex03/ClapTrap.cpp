@@ -41,9 +41,28 @@ void		ClapTrap::beRepaired(unsigned int amount) const
 	std::cout << " points of energy!" << std::endl;
 }
 
+std::string	ClapTrap::getName(void) const
+{
+	return (this->_name);
+}
+
+int			ClapTrap::getHitPoints(void) const
+{
+	return (this->_hitPoints);
+}
+
+int			ClapTrap::getEnergyPoints(void) const
+{
+	return (this->_energyPoints);
+}
+
+int			ClapTrap::getAttackDamage(void) const
+{
+	return (this->_attackDamage);
+}
+
 ClapTrap&	ClapTrap::operator=(ClapTrap const & instance)
 {
 	*this = instance;
 	return (*this);
 }
-

@@ -6,11 +6,11 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2021/12/22 18:10:56 by sachouam         ###   ########.fr        #
+#    Updated: 2021/12/24 01:14:43 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	claptrap
+NAME		=	scavtrap
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 

@@ -8,6 +8,19 @@ int
 	ScavTrap	inst2("Mas");
 	FragTrap	inst3("Dude");
 
+	std::cout << inst1.getName() << std::endl;
+	std::cout << inst1.getHitPoints() << std::endl;
+	std::cout << inst1.getEnergyPoints() << std::endl;
+	std::cout << inst1.getAttackDamage() << std::endl;
+	std::cout << inst2.getName() << std::endl;
+	std::cout << inst2.getHitPoints() << std::endl;
+	std::cout << inst2.getEnergyPoints() << std::endl;
+	std::cout << inst2.getAttackDamage() << std::endl;
+	std::cout << inst3.getName() << std::endl;
+	std::cout << inst3.getHitPoints() << std::endl;
+	std::cout << inst3.getEnergyPoints() << std::endl;
+	std::cout << inst3.getAttackDamage() << std::endl;
+
 	inst1.attack("Mas");
 	inst2.takeDamage(20);
 	inst2.beRepaired(20);
