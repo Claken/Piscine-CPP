@@ -22,11 +22,6 @@ std::string		Animal::getType(void) const
 	return (this->_type);
 }
 
-void			Animal::makeSound(void) const
-{
-	std::cout << "** ANIMAL SOUND **" << std::endl;
-}
-
 Animal&	Animal::operator=(Animal const & instance)
 {
 	this->_type = instance.getType();
