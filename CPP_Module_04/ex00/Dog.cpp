@@ -23,7 +23,7 @@ void	Dog::makeSound(void) const
 
 Dog&	Dog::operator=(Dog const & instance)
 {
-	*this = instance;
+	this->_type = instance.getType();
 	return (*this);
 }
 

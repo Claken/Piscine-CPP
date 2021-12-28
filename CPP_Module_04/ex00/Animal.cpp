@@ -28,7 +28,7 @@ void			Animal::makeSound(void) const
 
 Animal&	Animal::operator=(Animal const & instance)
 {
-	*this = instance;
+	this->_type = instance.getType();
 	return (*this);
 }
 

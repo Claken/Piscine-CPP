@@ -23,7 +23,7 @@ void	Cat::makeSound(void) const
 
 Cat&	Cat::operator=(Cat const & instance)
 {
-	*this = instance;
+	this->_type = instance.getType();
 	return (*this);
 }
 

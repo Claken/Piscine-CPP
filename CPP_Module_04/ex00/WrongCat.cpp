@@ -23,7 +23,7 @@ void	WrongCat::makeSound(void) const
 
 WrongCat&	WrongCat::operator=(WrongCat const & instance)
 {
-	*this = instance;
+	this->_type = instance.getType();
 	return (*this);
 }
 
