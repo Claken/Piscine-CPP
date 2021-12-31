@@ -2,6 +2,8 @@
 
 #define I_CHARACTER_HPP
 
+#include "AMateria.hpp"
+
 class ICharacter
 {
 	public:

@@ -26,6 +26,7 @@ void	Cat::makeSound(void) const
 
 Cat&	Cat::operator=(Cat const & instance)
 {
+	std::cout << "operator =" << std::endl;
 	this->_type = instance.getType();
 	if (this->_brain)
 		delete this->_brain;
