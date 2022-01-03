@@ -15,16 +15,16 @@ MateriaSource::MateriaSource(MateriaSource const & instance)
 
 MateriaSource::~MateriaSource(void)
 {
-	for (int i = 0; i < 4 i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (this->_materias[i])
 			delete this->_materias[i];
 	}
 }
 
-void		MateriaSource::learnMAteria(AMateria* m)
+void				MateriaSource::learnMateria(AMateria* m)
 {
-	for (int i = 0; i < 4 i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (this->_materias[i] == NULL)
 		{
@@ -36,12 +36,29 @@ void		MateriaSource::learnMAteria(AMateria* m)
 	delete m;
 }
 
-AMateria*	MateriaSource::createMateria(std::string const & type)
+AMateria*			MateriaSource::createMateria(std::string const & type)
 {
-	for (int i = 0; i < 4 i++)
+	for (int i = 0; i < 4; i++)
 	{
-		if (this->_materias[i] && this->_materias[i]->getName() == type)
-			return (this->_materias[i]->clone();
+		if (this->_materias[i] && this->_materias[i]->getType() == type)
+			return (this->_materias[i]->clone());
 	}
 	return 0;
+}
+
+MateriaSource&		MateriaSource::operator=(MateriaSource const & instance)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_materias[i])
+		{
+			delete this->_materias[i];
+			this->_materias[i] = NULL;
+		}
+	}
+	for (int i = 0; i < 4 && instance._materias[i]; i++)
+	{
+		this->_materias[i] = instance._materias[i]->clone();
+	}
+	return (*this);
 }

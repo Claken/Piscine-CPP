@@ -28,7 +28,10 @@ Character::~Character(void)
 	for (int i = 0; i < this->_index; i++)
 	{
 		if (this->_inventory[i])
+		{
+			std::cout << "Character index = " << i << std::endl;
 			delete this->_inventory[i];
+		}
 	}
 }
 
@@ -67,7 +70,7 @@ void					Character::use(int idx, ICharacter& target)
 		this->_inventory[idx]->use(target);
 }
 
-Character&				operator=(Character const & instance)
+Character&				Character::operator=(Character const & instance)
 {
 	this->_name = instance.getName();
 	for (int i = 0; i < this->_index; i++)

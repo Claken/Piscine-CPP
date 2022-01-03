@@ -20,6 +20,10 @@ class Character : public ICharacter
 	Character(Character const & instance);
 	virtual ~Character(void);
 
+	virtual std::string const & getName() const;
+	virtual void equip(AMateria* m);
+	virtual void unequip(int idx);
+	virtual void use(int idx, ICharacter& target);
 	int						getIndex(void) const;
 	Character&				operator=(Character const & instance);
 };

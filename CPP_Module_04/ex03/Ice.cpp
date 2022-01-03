@@ -5,9 +5,9 @@ Ice::Ice(void)
 	this->_type = "ice";
 }
 
-Ice::Ice(Ice const & instance)
+Ice::Ice(Ice const & instance) : AMateria(instance)
 {
-i	*this = instance;
+	*this = instance;
 }
 
 void			Ice::use(ICharacter& target)
@@ -19,4 +19,10 @@ AMateria*		Ice::clone(void) const
 {
 	Ice *newIce = new Ice();
 	return (newIce);
+}
+
+Ice&			Ice::operator=(Ice const & instance)
+{
+	this->_type = instance.getType();
+	return *this;
 }

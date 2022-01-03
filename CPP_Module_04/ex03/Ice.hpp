@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Ice : public AMateria
 {
@@ -11,9 +12,10 @@ class Ice : public AMateria
 
 	Ice(void);
 	Ice(Ice const & instance);
-	virtual ~Ice(void);
+	virtual ~Ice(void) {};
 
-	virtual void	use(ICharacter& target);
+	virtual AMateria*	clone() const;
+	virtual void		use(ICharacter& target);
 	Ice&			operator=(Ice const & instance);
 };
 

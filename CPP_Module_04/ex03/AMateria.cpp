@@ -12,9 +12,11 @@ AMateria::AMateria(AMateria const & instance)
 
 void			AMateria::use(ICharacter& target)
 {
+	(void)target;
+	std::cout << "use function in AMateria" << std::endl;
 }
 
-std::string		AMateria::const & getType() const
+std::string const &		AMateria::getType() const
 {
 	return (this->_type);
 }

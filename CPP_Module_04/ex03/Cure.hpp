@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Cure : public AMateria
 {
@@ -11,9 +12,10 @@ class Cure : public AMateria
 
 	Cure(void);
 	Cure(Cure const & instance);
-	virtual ~Cure(void);
+	virtual ~Cure(void) {};
 
-	virtual void	use(ICharacter& target);
+	virtual AMateria*	clone() const;
+	virtual void		use(ICharacter& target);
 	Cure&	operator=(Cure const & instance);
 };
 

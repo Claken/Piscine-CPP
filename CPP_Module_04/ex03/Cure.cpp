@@ -5,7 +5,7 @@ Cure::Cure(void)
 	this->_type = "cure";
 }
 
-Cure::Cure(Cure const & instance)
+Cure::Cure(Cure const & instance) : AMateria(instance)
 {
 	*this = instance;
 }
@@ -19,4 +19,10 @@ AMateria*		Cure::clone(void) const
 {
 	Cure *newCure = new Cure();
 	return (newCure);
+}
+
+Cure&			Cure::operator=(Cure const & instance)
+{
+	this->_type = instance.getType();
+	return *this;
 }
