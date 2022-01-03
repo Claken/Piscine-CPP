@@ -2,13 +2,14 @@
 
 #define CURE_HPP
 
+#include <iostream>
 #include "AMateria.hpp"
 
 class Cure : public AMateria
 {
 	public :
 
-	Cure(void) : _type("cure") {};
+	Cure(void);
 	Cure(Cure const & instance);
 	virtual ~Cure(void);
 

@@ -1,5 +1,10 @@
 #include "Cure.hpp"
 
+Cure::Cure(void)
+{
+	this->_type = "cure";
+}
+
 Cure::Cure(Cure const & instance)
 {
 	*this = instance;

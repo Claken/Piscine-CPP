@@ -1,5 +1,10 @@
 #include "Ice.hpp"
 
+Ice::Ice(void)
+{
+	this->_type = "ice";
+}
+
 Ice::Ice(Ice const & instance)
 {
 i	*this = instance;
