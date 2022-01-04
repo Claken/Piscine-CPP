@@ -20,7 +20,10 @@ Character::Character(Character const & instance)
 			delete this->_inventory[i];
 	}
 	for (int i = 0; i < instance.getIndex(); i++)
-		this->_inventory[i] = instance._inventory[i]->clone();
+	{
+		if (instance._inventory[i])
+			this->_inventory[i] = instance._inventory[i]->clone();
+	}
 }
 
 Character::~Character(void)
@@ -29,7 +32,6 @@ Character::~Character(void)
 	{
 		if (this->_inventory[i])
 		{
-			std::cout << "Character index = " << i << std::endl;
 			delete this->_inventory[i];
 		}
 	}
@@ -54,14 +56,17 @@ void					Character::equip(AMateria *m)
 	}
 	else
 	{
-		std::cout << "the inventory is full" << std::endl;
+		std::cout << "the inventory is full for " << this->_name << std::endl;
 	}
 }
 
 void					Character::unequip(int idx)
 {
 	if (idx <= 3 && this->_inventory[idx])
+	{
+		delete this->_inventory[idx];
 		this->_inventory[idx] = NULL;
+	}
 }
 
 void					Character::use(int idx, ICharacter& target)
