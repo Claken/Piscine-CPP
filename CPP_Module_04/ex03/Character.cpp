@@ -12,18 +12,7 @@ Character::Character(std::string name)
 
 Character::Character(Character const & instance)
 {
-	this->_name = instance.getName();
-	this->_index = instance.getIndex();
-	for (int i = 0; i < this->_index; i++)
-	{
-		if (this->_inventory[i])
-			delete this->_inventory[i];
-	}
-	for (int i = 0; i < instance.getIndex(); i++)
-	{
-		if (instance._inventory[i])
-			this->_inventory[i] = instance._inventory[i]->clone();
-	}
+	*this = instance;
 }
 
 Character::~Character(void)
@@ -31,9 +20,7 @@ Character::~Character(void)
 	for (int i = 0; i < this->_index; i++)
 	{
 		if (this->_inventory[i])
-		{
 			delete this->_inventory[i];
-		}
 	}
 }
 
@@ -81,10 +68,18 @@ Character&				Character::operator=(Character const & instance)
 	for (int i = 0; i < this->_index; i++)
 	{
 		if (this->_inventory[i])
+		{
 			delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
 	}
 	for (int i = 0; i < instance.getIndex(); i++)
-		this->_inventory[i] = instance._inventory[i]->clone();
+	{
+		if (instance._inventory[i])
+			this->_inventory[i] = instance._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
+	}
 	this->_index = instance.getIndex();
 	return (*this);
 }

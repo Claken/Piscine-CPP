@@ -56,9 +56,10 @@ MateriaSource&		MateriaSource::operator=(MateriaSource const & instance)
 			this->_materias[i] = NULL;
 		}
 	}
-	for (int i = 0; i < 4 && instance._materias[i]; i++)
+	for (int i = 0; i < 4; i++)
 	{
-		this->_materias[i] = instance._materias[i]->clone();
+		if (instance._materias[i])
+			this->_materias[i] = instance._materias[i]->clone();
 	}
 	return (*this);
 }

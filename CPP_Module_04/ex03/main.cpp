@@ -57,7 +57,7 @@ int main()
 	delete bob;
 	delete me;
 	delete me2;
-	delete me3;
 	delete src;
+	delete me3;
 	return 0;
 }

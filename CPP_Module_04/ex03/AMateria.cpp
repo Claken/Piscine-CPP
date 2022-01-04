@@ -10,7 +10,7 @@ AMateria::AMateria(AMateria const & instance)
 	*this = instance;
 }
 
-void			AMateria::use(ICharacter& target)
+void					AMateria::use(ICharacter& target)
 {
 	(void)target;
 	std::cout << "use function in AMateria" << std::endl;
@@ -19,4 +19,10 @@ void			AMateria::use(ICharacter& target)
 std::string const &		AMateria::getType() const
 {
 	return (this->_type);
+}
+
+AMateria&				AMateria::operator=(AMateria const & instance)
+{
+	this->_type = instance.getType();
+	return (*this);
 }
