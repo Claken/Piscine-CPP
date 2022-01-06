@@ -2,6 +2,10 @@
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
+	if (grade < 1)
+		throw (Bureaucrat::GradeTooHighException());
+	if (grade > 150)
+		throw (Bureaucrat::GradeTooLowException());
 	this->_grade = grade;
 }
 
@@ -18,13 +22,19 @@ const std::string	Bureaucrat::getName() const
 void				Bureaucrat::increaseGrade()
 {
 	this->_grade--;
-	if (this->grade < 1)
-		throw (Bureaucrat::GradeTooHighException);
+	if (this->_grade < 1)
+		throw (Bureaucrat::GradeTooHighException());
 }
 
 void				Bureaucrat::decreaseGrade()
 {
 	this->_grade++;
-	if (this->grade < 150)
-		throw (Bureaucrat::GradeTooLowException);
+	if (this->_grade > 150)
+		throw (Bureaucrat::GradeTooLowException());
+}
+
+std::ostream&		operator<<(std::ostream& os, Bureaucrat const & instance)
+{
+	os << instance.getName() << ", bureaucrat grade " << instance.getGrade();
+	return os;
 }
