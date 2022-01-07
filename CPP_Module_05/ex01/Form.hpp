@@ -2,7 +2,10 @@
 
 #define FORM_HPP
 
-#include "Bureaucrat.hpp"
+#include <iostream>
+#include <stdexcept>
+
+class Bureaucrat;
 
 class Form
 {
@@ -20,7 +23,7 @@ class Form
 		public :
 		virtual const char* what() const throw()
 		{
-			return ("The grade is too high !");
+			return ("the grade is too high !");
 		}
 	};
 	class GradeTooLowException : public std::exception
@@ -28,17 +31,17 @@ class Form
 		public :
 		virtual const char* what() const throw()
 		{
-			return ("The grade is too low !");
+			return ("the grade is too low !");
 		}
 	};
-	Form();
+	Form() : _name(NULL), _sign(false), _gradeSign(0), _gradeExec(0) {};
 	Form(std::string name, int sign, int exec);
-	~Form();
-	const std::string	getName() const;
-	const int			getGradeSign() const;
-	const int			getGradeExec() const;
-	void				beSigned();
-	void				signForm();
+	~Form() {};
+	std::string			getName() const;
+	int					getGradeSign() const;
+	int					getGradeExec() const;
+	bool				getSignBool() const;
+	void				beSigned(Bureaucrat const & instance);
 };
 
 std::ostream&			operator<<(std::ostream& os, Form const & instance);

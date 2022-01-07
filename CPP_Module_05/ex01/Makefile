@@ -6,7 +6,7 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2022/01/04 23:53:53 by sachouam         ###   ########.fr        #
+#    Updated: 2022/01/07 14:03:01 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRC			=	main.cpp \
 				Bureaucrat.cpp \
+				Form.cpp \
 
 OBJ			=	$(SRC:%.cpp=%.o)
 
