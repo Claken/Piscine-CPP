@@ -1,16 +1,17 @@
-#ifndef BUREAUCRAT_HPP
+#ifndef FORM_HPP
 
-#define BUREAUCRAT_HPP
+#define FORM_HPP
 
-#include <iostream>
-#include <stdexcept>
+#include "Bureaucrat.hpp"
 
-class Bureaucrat
+class Form
 {
-	protected :
+	private :
 
 	const std::string	_name;
-	int					_grade;
+	bool				_sign;
+	const int			_gradeSign;
+	const int			_gradeExec;
 
 	public :
 
@@ -30,15 +31,16 @@ class Bureaucrat
 			return ("The grade is too low !");
 		}
 	};
-	Bureaucrat() {};
-	Bureaucrat(std::string name, int grade);
-	~Bureaucrat() {};
-	int					getGrade() const;
+	Form();
+	Form(std::string name, int sign, int exec);
+	~Form();
 	const std::string	getName() const;
-	void				increaseGrade();
-	void				decreaseGrade();
+	const int			getGradeSign() const;
+	const int			getGradeExec() const;
+	void				beSigned();
+	void				signForm();
 };
 
-std::ostream&			operator<<(std::ostream& os, Bureaucrat const & instance);
+std::ostream&			operator<<(std::ostream& os, Form const & instance);
 
 #endif
