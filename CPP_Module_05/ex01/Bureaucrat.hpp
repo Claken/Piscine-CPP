@@ -39,7 +39,7 @@ class Bureaucrat
 	const std::string	getName() const;
 	void				increaseGrade();
 	void				decreaseGrade();
-	void				signForm(Form const & instance);
+	void				signForm(Form &instance);
 };
 
 std::ostream&			operator<<(std::ostream& os, Bureaucrat const & instance);

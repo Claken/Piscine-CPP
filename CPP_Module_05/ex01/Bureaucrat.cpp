@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
@@ -33,7 +34,7 @@ void				Bureaucrat::decreaseGrade()
 		throw (Bureaucrat::GradeTooLowException());
 }
 
-void				Bureaucrat::signForm(Form const & instance)
+void				Bureaucrat::signForm(Form &instance)
 {
 	try
 	{
