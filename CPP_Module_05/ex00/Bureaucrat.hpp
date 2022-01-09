@@ -32,7 +32,9 @@ class Bureaucrat
 	};
 	Bureaucrat() {};
 	Bureaucrat(std::string name, int grade);
+	Bureaucrat(Bureaucrat const & instance);
 	~Bureaucrat() {};
+	Bureaucrat&			operator=(Bureaucrat const & instance);
 	int					getGrade() const;
 	const std::string	getName() const;
 	void				increaseGrade();

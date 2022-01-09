@@ -10,6 +10,13 @@ Form::Form(std::string name, int sign, int exec) : _name(name), _gradeSign(sign)
 		throw (Form::GradeTooLowException());
 }
 
+Form::Form(Form const & instance) :
+	_name(instance.getName()),
+	_sign(instance.getSignBool()),
+	_gradeSign(instance.getGradeSign()),
+	_gradeExec(instance.getGradeExec())
+{}
+
 std::string		Form::getName() const
 {
 	return (this->_name);
@@ -36,6 +43,12 @@ void			Form::beSigned(Bureaucrat const & instance)
 		this->_sign = true;
 	else
 		throw (Form::GradeTooLowException());
+}
+
+Form&			Form::operator=(Form const & instance)
+{
+	this->_sign = instance.getSignBool();
+	return (*this);
 }
 
 std::ostream&	operator<<(std::ostream& os, Form const & instance)

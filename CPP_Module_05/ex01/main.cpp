@@ -5,9 +5,15 @@ int
 	main(void)
 {
 	std::cout << "create form with value -4242, 4242" << std::endl;
-	Form tutu("tutu", -4242, 4242);
+	try
+	{
+		Form tutu("tutu", -4242, 4242);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << std::endl;
-
 
 	std::cout << "create form with value 42, 53" << std::endl;
 	Form		toto("toto", 42, 53);

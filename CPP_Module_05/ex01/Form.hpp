@@ -35,8 +35,10 @@ class Form
 		}
 	};
 	Form() : _name(NULL), _sign(false), _gradeSign(0), _gradeExec(0) {};
+	Form(Form const & instance);
 	Form(std::string name, int sign, int exec);
 	~Form() {};
+	Form&				operator=(Form const & instance);
 	std::string			getName() const;
 	int					getGradeSign() const;
 	int					getGradeExec() const;
