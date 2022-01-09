@@ -37,14 +37,14 @@ class Form
 	Form() : _name(NULL), _sign(false), _gradeSign(0), _gradeExec(0) {};
 	Form(Form const & instance);
 	Form(std::string name, int sign, int exec);
-	~Form() {};
+	virtual ~Form() {};
 	Form&				operator=(Form const & instance);
 	std::string			getName() const;
 	int					getGradeSign() const;
 	int					getGradeExec() const;
 	bool				getSignBool() const;
 	void				beSigned(Bureaucrat const & instance);
-};
+	virtual void		execute(Bureaucrat const & executor) const = 0;
 
 std::ostream&			operator<<(std::ostream& os, Form const & instance);
 

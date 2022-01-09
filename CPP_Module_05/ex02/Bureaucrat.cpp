@@ -53,6 +53,11 @@ void				Bureaucrat::signForm(Form &instance)
 	std::cout << this->_name << " signs " << instance.getName() << std::endl;
 }
 
+void				Bureaucrat::executeForm(Form const & form)
+{
+
+}
+
 Bureaucrat&			Bureaucrat::operator=(Bureaucrat const & instance)
 {
 	this->_grade = instance.getGrade();
