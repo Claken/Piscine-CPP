@@ -34,6 +34,14 @@ class Form
 			return ("the grade is too low !");
 		}
 	};
+	class FormNotSignedException : public std::exception
+	{
+		public :
+		virtual const char* what() const throw()
+		{
+			return ("the form is not signed !");
+		}
+	};
 	Form() : _name(NULL), _sign(false), _gradeSign(0), _gradeExec(0) {};
 	Form(Form const & instance);
 	Form(std::string name, int sign, int exec);
