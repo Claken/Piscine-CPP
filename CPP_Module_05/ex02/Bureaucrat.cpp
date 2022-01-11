@@ -58,13 +58,13 @@ void				Bureaucrat::executeForm(Form const & form)
 	try
 	{
 		form.execute(*this);
+		std::cout << this->_name << " executes " << form.getName() << std::endl;
 	}
 	catch (std::exception & e)
 	{
 		std::cout << this->_name << " cannot execute " << form.getName() << " because ";
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << this->_name << " executes " form.getName() << std::endl;
 }
 
 Bureaucrat&			Bureaucrat::operator=(Bureaucrat const & instance)

@@ -44,13 +44,13 @@ void				Bureaucrat::signForm(Form &instance)
 	try
 	{
 		instance.beSigned(*this);
+		std::cout << this->_name << " signs " << instance.getName() << std::endl;
 	}
 	catch (std::exception & e)
 	{
 		std::cout << this->_name << " cannot sign " << instance.getName() << " because ";
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << this->_name << " signs " << instance.getName() << std::endl;
 }
 
 Bureaucrat&			Bureaucrat::operator=(Bureaucrat const & instance)
