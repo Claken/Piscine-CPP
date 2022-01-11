@@ -59,4 +59,3 @@ std::ostream&	operator<<(std::ostream& os, Form const & instance)
 	os << "form grade required to execute it : " << instance.getGradeExec() << std::endl;
 	return os;
 }
-

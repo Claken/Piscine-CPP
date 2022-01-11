@@ -3,6 +3,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <unistd.h>
 
 int
 	main(void)
@@ -25,13 +26,21 @@ int
 	Bob.executeForm(robotomizeForm);
 	Bob.signForm(robotomizeForm);
 	Bob.executeForm(robotomizeForm);
+	sleep(1);
 	Bob.executeForm(robotomizeForm);
+	sleep(1);
 	Bob.executeForm(robotomizeForm);
+	sleep(1);
 	Bob.executeForm(robotomizeForm);
+	sleep(1);
 	Bob.executeForm(robotomizeForm);
+	sleep(1);
 	Bob.executeForm(robotomizeForm);
+	sleep(1);
 	Bob.executeForm(robotomizeForm);
+	sleep(1);
 	Bob.executeForm(robotomizeForm);
+	sleep(1);
 	Bob.executeForm(robotomizeForm);
 	return (0);
 }
