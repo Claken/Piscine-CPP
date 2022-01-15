@@ -4,6 +4,7 @@
 #include <sstream>
 #include <math.h>
 #include <climits>
+#include <stdlib.h>
 
 int
 	main(int ac, char **av)
@@ -11,9 +12,6 @@ int
 	if (ac != 2)
 		return (-1);
 	std::string str = av[1];
-	std::istringstream iss(av[1]);
-	if (iss.fail())
-		return (-1);
 
 	double conv;
 
@@ -25,7 +23,7 @@ int
 	else if (str == "-inf" || str == "-inff")
 		conv = -INFINITY;
 	else
-		iss >> conv;
+		conv = strtod(av[1], NULL);
 
 	char	a = static_cast<char>(conv);
 	int		b = static_cast<int>(conv);
