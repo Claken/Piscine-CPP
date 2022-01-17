@@ -123,6 +123,26 @@ Fixed			Fixed::operator--(int)
 	return (copy);
 }
 
+Fixed&			Fixed::min(Fixed& inst1, Fixed& inst2)
+{
+	return (inst1.getRawBits() < inst2.getRawBits() ? inst1 : inst2);
+}
+
+Fixed const &	Fixed::min(Fixed const & inst1, Fixed const & inst2)
+{
+	return (inst1.getRawBits() < inst2.getRawBits() ? inst1 : inst2);
+}
+
+Fixed&			Fixed::max(Fixed& inst1, Fixed& inst2)
+{
+	return (inst1.getRawBits() > inst2.getRawBits() ? inst1 : inst2);
+}
+
+Fixed const &	Fixed::max(Fixed const & inst1, Fixed const & inst2)
+{
+	return (inst1.getRawBits() > inst2.getRawBits() ? inst1 : inst2);
+}
+
 std::ostream&	operator<<(std::ostream & output, Fixed const & instance)
 {
 	output << instance.toFloat();
