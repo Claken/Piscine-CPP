@@ -32,6 +32,9 @@ void		ScavTrap::attack(std::string const & target)
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const & instance)
 {
-	*this = instance;
+	this->_name = instance._name;
+	this->_hitPoints = instance._hitPoints;
+	this->_energyPoints = instance._energyPoints;
+	this->_attackDamage = instance._attackDamage;
 	return (*this);
 }

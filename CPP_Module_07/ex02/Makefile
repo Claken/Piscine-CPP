@@ -6,13 +6,13 @@
 #    By: sachouam <sachouam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 23:56:52 by sachouam          #+#    #+#              #
-#    Updated: 2022/01/16 23:58:58 by sachouam         ###   ########.fr        #
+#    Updated: 2022/01/17 21:40:03 by sachouam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	array
 CXX			=	c++
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
 
 SRC			=	main.cpp \
 
