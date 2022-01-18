@@ -22,6 +22,7 @@ class Array
 
 	Array<T>(unsigned int n) : _array(NULL), _size(n)
 	{
+		std::cout << "n = " << n << std::endl;
 		this->_array = new T[n];
 		for (unsigned int i = 0; i < this->_size; i++)
 			this->_array[i] = 0;
@@ -34,6 +35,7 @@ class Array
 
 	~Array<T>(void)
 	{
+		//std::cout << "destructor" << std::endl;
 		delete [] this->_array;
 	};
 
@@ -54,17 +56,15 @@ class Array
 
 	Array&		operator=(Array const & instance)
 	{
+		std::cout << "1 operator = called" << std::endl;
 		this->_size = instance._size;
+		//if (this->_array != NULL)
+		//	delete [] this->_array;
 		this->_array = new T[this->_size];
 		for (unsigned int i = 0; i < this->_size; i++)
 			this->_array[i] = instance._array[i];
 		return (*this);
-	};
-
-	T&			operator=(T & value)
-	{
-		return (value);
-	};
+	}
 };
 
 #endif

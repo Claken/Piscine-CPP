@@ -10,11 +10,14 @@ int main(int, char**)
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		const int value = rand();
+		//std::cout << "la1" << std::endl;
 		numbers[i] = value;
+		//std::cout << "la2" << std::endl;
 		mirror[i] = value;
 	}
 	//SCOPE
 	{
+		std::cout << "la3" << std::endl;
 		Array<int> tmp = numbers;
 		Array<int> test(tmp);
 	}
@@ -23,7 +26,6 @@ int main(int, char**)
 	{
 		if (mirror[i] != numbers[i])
 		{
-			std::cerr << "didn't save the same value!!" << std::endl;
 			return 1;
 		}
 	}
