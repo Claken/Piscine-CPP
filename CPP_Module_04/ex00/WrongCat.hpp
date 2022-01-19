@@ -12,7 +12,7 @@ class WrongCat : public WrongAnimal
 	WrongCat(WrongCat const & instance);
 	virtual ~WrongCat(void);
 
-	void			makeSound(void) const;
+	void				makeSound(void) const;
 	WrongCat&			operator=(WrongCat const & instance);
 };
 
