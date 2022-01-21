@@ -13,6 +13,7 @@ int main()
 	src->learnMateria(new Cure());
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
+	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
 	Character* me2 = new Character("me2");
 	AMateria* tmp;

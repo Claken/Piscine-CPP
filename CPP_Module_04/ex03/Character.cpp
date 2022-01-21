@@ -8,6 +8,10 @@ Character::Character(std::string name)
 	this->_inventory[1] = NULL;
 	this->_inventory[2] = NULL;
 	this->_inventory[3] = NULL;
+	this->_saved[0] = NULL;
+	this->_saved[1] = NULL;
+	this->_saved[2] = NULL;
+	this->_saved[3] = NULL;
 }
 
 Character::Character(Character const & instance)
@@ -21,6 +25,11 @@ Character::~Character(void)
 	{
 		if (this->_inventory[i])
 			delete this->_inventory[i];
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_saved[i])
+			delete this->_saved[i];
 	}
 }
 
@@ -51,7 +60,14 @@ void					Character::unequip(int idx)
 {
 	if (idx <= 3 && this->_inventory[idx])
 	{
-		delete this->_inventory[idx];
+		for (int i = 0; i < 4; i++)
+		{
+			if (this->_saved[i] == NULL)
+			{
+				this->_saved[i] = this->_inventory[idx];
+				break;
+			}
+		}
 		this->_inventory[idx] = NULL;
 	}
 }

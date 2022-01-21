@@ -12,6 +12,7 @@ class Character : public ICharacter
 	std::string		_name;
 	int				_index;
 	AMateria		*_inventory[4];
+	AMateria		*_saved[4];
 
 	public :
 
