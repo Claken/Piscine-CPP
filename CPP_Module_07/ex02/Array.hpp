@@ -1,6 +1,4 @@
-#ifndef ARRAY_HPP
-
-#define ARRAY_HPP
+#pragma once
 
 #include <exception>
 #include <iostream>
@@ -59,7 +57,5 @@ class Array
 		for (unsigned int i = 0; i < this->_size; i++)
 			this->_array[i] = instance._array[i];
 		return (*this);
-	}
+	};
 };
-
-#endif

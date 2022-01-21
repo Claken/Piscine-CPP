@@ -3,13 +3,17 @@
 #include <sys/time.h>
 #include <unistd.h>
 
+
 #define MAX_VAL 10
+
 int main(int, char**)
 {
 	Array<char> letters;
-	Array<char>	mirrorLetters(4);
+	Array<char> mirrorLetters(4);
 
-	std::cout << "creation of mirrorLetters with 't' 'e' 's' 't' inside" << std::endl;
+	std::cout << "letters.size() : " << letters.size() << std::endl;
+	std::cout << "mirrorLetters.size() : " << mirrorLetters.size() << std::endl;
+	std::cout << "put 't' 'e' 's' 't' inside mirrorLetters" << std::endl;
 	mirrorLetters[0] = 't';
 	mirrorLetters[1] = 'e';
 	mirrorLetters[2] = 's';
@@ -25,6 +29,7 @@ int main(int, char**)
 	std::cout << std::endl;
 
 	Array<int> numbers(MAX_VAL);
+	std::cout << "numbers.size() : " << numbers.size() << std::endl;
 	int *mirror = new int[MAX_VAL];
 
 	srand(time(NULL));
@@ -35,11 +40,7 @@ int main(int, char**)
 		mirror[i] = value;
 	}
 
-	std::cout << "check if copy/assignation won’t affect anything in the other array..." << std::endl;
-	{
-		Array<int> tmp = numbers;
-		Array<int> test(tmp);
-	}
+	std::cout << "check if mirror[i] and numbers[i] have the same values" << std::endl;
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		if (mirror[i] != numbers[i])
@@ -51,10 +52,18 @@ int main(int, char**)
 	std::cout << "everythings is okay !" << std::endl;
 	std::cout << std::endl;
 
+	std::cout << "Scope : tmp = numbers & test(tmp)" << std::endl;
+	{
+		Array<int> tmp = numbers;
+		Array<int> test(tmp);
+		std::cout << "tmp.size()  : " << tmp.size() << std::endl;
+		std::cout << "test.size() : " << test.size() << std::endl;
+	}
+	std::cout << std::endl;
 
 	try
 	{
-		std::cout << "test numbers[-2] = 0:      ";
+		std::cout << "test numbers[-2] = 0       : ";
 		numbers[-2] = 0;
 		std::cout << "it works !" << std::endl;
 	}
@@ -64,7 +73,7 @@ int main(int, char**)
 	}
 	try
 	{
-		std::cout << "test numbers[MAX_VAL] = 0  ";
+		std::cout << "test numbers[MAX_VAL] = 0  : ";
 		numbers[MAX_VAL] = 0;
 		std::cout << "it works !" << std::endl;
 	}
@@ -88,8 +97,7 @@ int main(int, char**)
 		std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "delete [] mirror" << std::endl;
-	delete [] mirror;
+	delete[] mirror;
 
 	return 0;
 }
