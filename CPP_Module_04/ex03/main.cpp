@@ -44,6 +44,7 @@ int main()
 	me->use(2, *bob);
 	me->use(3, *bob);
 	me->unequip(2);
+	me->unequip(-1);
 	me->unequip(4);
 	std::cout << "after unequip(2) and unequip(4)" << std::endl;
 	me->use(0, *bob);
