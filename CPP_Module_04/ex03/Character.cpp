@@ -97,5 +97,12 @@ Character&				Character::operator=(Character const & instance)
 			this->_inventory[i] = NULL;
 	}
 	this->_index = instance.getIndex();
+	for (int i = 0; i < 4; i++)
+	{
+		if (instance._saved[i])
+			this->_saved[i] = instance._saved[i]->clone();
+		else
+			this->_saved[i] = NULL;
+	}
 	return (*this);
 }
