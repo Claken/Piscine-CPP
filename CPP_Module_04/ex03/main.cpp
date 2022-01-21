@@ -37,6 +37,7 @@ int main()
 	delete tmp;
 	tmp = src->createMateria("caca");
 	std::cout << "tmp = src->createMateria(caca) : " << tmp << std::endl;
+	delete tmp;
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
@@ -62,5 +63,6 @@ int main()
 	delete me2;
 	delete src;
 	delete me3;
+	//while (1);
 	return 0;
 }
