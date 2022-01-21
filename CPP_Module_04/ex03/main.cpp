@@ -35,6 +35,8 @@ int main()
 	me->equip(tmp);
 	me2->equip(tmp);
 	delete tmp;
+	tmp = src->createMateria("caca");
+	std::cout << "tmp = src->createMateria(caca) : " << tmp << std::endl;
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);

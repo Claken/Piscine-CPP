@@ -93,16 +93,17 @@ Character&				Character::operator=(Character const & instance)
 	{
 		if (instance._inventory[i])
 			this->_inventory[i] = instance._inventory[i]->clone();
-		else
-			this->_inventory[i] = NULL;
 	}
 	this->_index = instance.getIndex();
 	for (int i = 0; i < 4; i++)
 	{
+		if (this->_saved[i])
+		{
+			delete this->_saved[i];
+			this->_saved[i] = NULL;
+		}
 		if (instance._saved[i])
 			this->_saved[i] = instance._saved[i]->clone();
-		else
-			this->_saved[i] = NULL;
 	}
 	return (*this);
 }
