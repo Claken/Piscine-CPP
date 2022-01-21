@@ -26,7 +26,7 @@ void			Animal::makeSound(void) const
 	std::cout << "** ANIMAL SOUND **" << std::endl;
 }
 
-Animal&	Animal::operator=(Animal const & instance)
+Animal&			Animal::operator=(Animal const & instance)
 {
 	this->_type = instance.getType();
 	return (*this);
