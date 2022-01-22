@@ -5,6 +5,7 @@ int
 {
 	try
 	{
+		std::cout << "Bureaucrat : Robert, 151" << std::endl;
 		Bureaucrat Robert("Robert", 151);
 		std::cout << Robert << std::endl;
 	}
@@ -14,6 +15,7 @@ int
 	}
 	try
 	{
+		std::cout << "Bureaucrat : Roberto, 0" << std::endl;
 		Bureaucrat Roberto("Roberto", 0);
 		std::cout << Roberto << std::endl;
 	}
@@ -26,8 +28,8 @@ int
 		Bureaucrat Bob("Bobby", 140);
 		while (1)
 		{
-			Bob.decreaseGrade();
 			std::cout << Bob << std::endl;
+			Bob.decreaseGrade();
 		}
 	}
 	catch (std::exception & e)
@@ -39,8 +41,8 @@ int
 		Bureaucrat Bob("Bob", 5);
 		while (1)
 		{
-			Bob.increaseGrade();
 			std::cout << Bob << std::endl;
+			Bob.increaseGrade();
 		}
 	}
 	catch (std::exception & e)
