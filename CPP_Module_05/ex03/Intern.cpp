@@ -38,7 +38,6 @@ Form*		Intern::createRobotomyForm(std::string target)
 	return (newForm);
 }
 
-
 Form*		Intern::makeForm(std::string name, std::string target)
 {
 	for (int i = 0; i < 3; i++)
@@ -53,8 +52,8 @@ Form*		Intern::makeForm(std::string name, std::string target)
 Intern&		Intern::operator=(Intern const & instance)
 {
 	this->_names[0] = instance._names[0];
-	this->_names[0] = instance._names[1];
-	this->_names[0] = instance._names[2];
+	this->_names[1] = instance._names[1];
+	this->_names[2] = instance._names[2];
 	this->functions[0] = instance.functions[0];
 	this->functions[1] = instance.functions[1];
 	this->functions[2] = instance.functions[2];
