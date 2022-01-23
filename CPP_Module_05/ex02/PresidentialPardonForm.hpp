@@ -1,6 +1,4 @@
-#ifndef PPF_HPP
-
-#define PFF_HPP
+#pragma once
 
 #include "Form.hpp"
 
@@ -20,5 +18,3 @@ class PresidentialPardonForm : public Form
 	std::string					getTarget() const;
 	PresidentialPardonForm&		operator=(PresidentialPardonForm const & instance);
 };
-
-#endif

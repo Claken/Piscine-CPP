@@ -1,6 +1,4 @@
-#ifndef INTERN_HPP
-
-#define INTERN_HPP
+#pragma once
 
 #include <iostream>
 
@@ -26,5 +24,3 @@ class Intern
 	Form*				createRobotomyForm(std::string target);
 	Intern&				operator=(Intern const & instance);
 };
-
-#endif

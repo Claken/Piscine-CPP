@@ -1,6 +1,4 @@
-#ifndef RRF_HPP
-
-#define RRF_HPP
+#pragma once
 
 #include "Form.hpp"
 #include <time.h>
@@ -22,5 +20,3 @@ class RobotomyRequestForm : public Form
 	std::string					getTarget() const;
 	RobotomyRequestForm&			operator=(RobotomyRequestForm const & instance);
 };
-
-#endif

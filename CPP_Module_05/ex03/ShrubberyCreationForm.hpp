@@ -1,6 +1,4 @@
-#ifndef RCF_HPP
-
-#define RCF_HPP
+#pragma once
 
 #include "Form.hpp"
 #include <fstream>
@@ -21,5 +19,3 @@ class ShrubberyCreationForm : public Form
 	std::string					getTarget() const;
 	ShrubberyCreationForm&		operator=(ShrubberyCreationForm const & instance);
 };
-
-#endif

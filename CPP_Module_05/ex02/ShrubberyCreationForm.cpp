@@ -28,20 +28,23 @@ void						ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		std::string			name = this->_target;
 		name.append("_shrubbery");
 		std::ofstream		ofs(name.data());
-		ofs << "    oxoxoo    ooxoo" << std::endl;
-		ofs << "  ooxoxo oo  oxoxooo" << std::endl;
-		ofs << " oooo xxoxoo ooo ooox" << std::endl;
-		ofs << " oxo o oxoxo  xoxxoxo" << std::endl;
-		ofs << "  oxo xooxoooo o ooo" << std::endl;
-		ofs << "    ooo\\oo\\  /o/o" << std::endl;
-		ofs << "        \\  \\/ /" << std::endl;
-		ofs << "         |   /" << std::endl;
-		ofs << "         |  |" << std::endl;
-		ofs << "         | D|" << std::endl;
-		ofs << "         |  |" << std::endl;
-		ofs << "         |  |" << std::endl;
-		ofs << "  ______/____\\____" << std::endl;
-		ofs.close();
+		if (ofs.is_open())
+		{
+			ofs << "    oxoxoo    ooxoo" << std::endl;
+			ofs << "  ooxoxo oo  oxoxooo" << std::endl;
+			ofs << " oooo xxoxoo ooo ooox" << std::endl;
+			ofs << " oxo o oxoxo  xoxxoxo" << std::endl;
+			ofs << "  oxo xooxoooo o ooo" << std::endl;
+			ofs << "    ooo\\oo\\  /o/o" << std::endl;
+			ofs << "        \\  \\/ /" << std::endl;
+			ofs << "         |   /" << std::endl;
+			ofs << "         |  |" << std::endl;
+			ofs << "         | D|" << std::endl;
+			ofs << "         |  |" << std::endl;
+			ofs << "         |  |" << std::endl;
+			ofs << "  ______/____\\____" << std::endl;
+			ofs.close();
+		}
 	}
 }
 
