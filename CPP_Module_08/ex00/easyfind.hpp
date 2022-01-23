@@ -4,6 +4,7 @@
 #include <exception>
 #include <list>
 #include <vector>
+#include <deque>
 
 template<typename T>
 int    easyfind(T const & lst, int nb)
