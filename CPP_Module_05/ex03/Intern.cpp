@@ -23,18 +23,24 @@ Intern::Intern(Intern const & instance)
 Form*		Intern::createShrubberyForm(std::string target)
 {
 	Form *newForm = new ShrubberyCreationForm(target);
+	std::cout << "Intern creates "; 
+	std::cout << "ShrubberyCreationForm" << std::endl; 
 	return (newForm);
 }
 
 Form*		Intern::createPresidentialForm(std::string target)
 {
 	Form *newForm = new PresidentialPardonForm(target);
+	std::cout << "Intern creates "; 
+	std::cout << "PresidentialPardonForm" << std::endl; 
 	return (newForm);
 }
 
 Form*		Intern::createRobotomyForm(std::string target)
 {
 	Form *newForm = new RobotomyRequestForm(target);
+	std::cout << "Intern creates "; 
+	std::cout << "RobotomyRequestForm" << std::endl;
 	return (newForm);
 }
 
