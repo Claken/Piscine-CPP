@@ -24,5 +24,16 @@ int main()
 	}
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+
+	std::vector<int> vect1;
+
+	vect1.push_back(7);
+	vect1.push_back(8);
+	vect1.push_back(50);
+
+	//std::vector<int>::iterator it = vect1.begin();
+	//std::vector<int>::iterator it2 = vect1.end();
+	//sp.addSeveralNumbers(it, it2);
+
 	return 0;
 }

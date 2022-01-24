@@ -3,6 +3,7 @@
 #include <iostream>
 #include <exception>
 #include <list>
+#include <vector>
 #include <stdlib.h>
 #include <climits>
 
@@ -42,4 +43,16 @@ class Span
 		unsigned int	longestSpan() const;
 		void			addNumber(int nb);
 		Span&			operator=(Span const & instance);
+
+		template<typename T>
+		void			addSeveralNumbers(typename T::iterator & beg, typename T::iterator & end)
+		{
+			typename T::const_iterator it;
+			it = beg;
+			while (it != end)
+			{
+				addNumber(*it);
+				it++;
+			}
+		}
 };

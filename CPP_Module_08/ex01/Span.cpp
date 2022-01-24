@@ -20,7 +20,6 @@ unsigned int	Span::shortestSpan() const
 
 	span = INT_MAX;
 	it = this->_list.begin();
-
 	while (it != this->_list.end())
 	{
 		std::list<int>::const_iterator	it2;
@@ -49,7 +48,6 @@ unsigned int	Span::longestSpan() const
 
 	span = INT_MIN;
 	it = this->_list.begin();
-
 	while (it != this->_list.end())
 	{
 		std::list<int>::const_iterator	it2;
