@@ -45,9 +45,9 @@ class Span
 		Span&			operator=(Span const & instance);
 
 		template<typename T>
-		void			addSeveralNumbers(typename T::iterator & beg, typename T::iterator & end)
+		void			addSeveralNumbers(T & beg, T & end)
 		{
-			typename T::const_iterator it;
+			T it;
 			it = beg;
 			while (it != end)
 			{

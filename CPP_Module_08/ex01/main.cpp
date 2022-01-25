@@ -31,9 +31,9 @@ int main()
 	vect1.push_back(8);
 	vect1.push_back(50);
 
-	//std::vector<int>::iterator it = vect1.begin();
-	//std::vector<int>::iterator it2 = vect1.end();
-	//sp.addSeveralNumbers(it, it2);
+	std::vector<int>::iterator it = vect1.begin();
+	std::vector<int>::iterator it2 = vect1.end();
+	sp.addSeveralNumbers(it, it2);
 
 	return 0;
 }
