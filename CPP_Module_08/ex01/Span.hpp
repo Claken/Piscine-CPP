@@ -42,17 +42,26 @@ class Span
 		unsigned int	shortestSpan() const;
 		unsigned int	longestSpan() const;
 		void			addNumber(int nb);
-		Span&			operator=(Span const & instance);
 
 		template<typename T>
-		void			addSeveralNumbers(T & beg, T & end)
+		void			addNumber(T & beg, T & end)
 		{
 			T it;
 			it = beg;
 			while (it != end)
 			{
-				addNumber(*it);
+				if (this->_index < this->_size)
+				{
+					this->_list.push_back(*it);
+					this->_index++;
+				}
+				else
+				{
+					throw (Span::CannotStoreAnymore());
+				}
 				it++;
 			}
 		}
+
+		Span&			operator=(Span const & instance);
 };
