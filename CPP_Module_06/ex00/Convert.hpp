@@ -26,7 +26,7 @@ class Convert
 		Convert(char *av);
 		Convert() {};
 		Convert(Convert const & instance);
-		~Convert() {};
+		virtual ~Convert() {};
 		Convert&	operator=(Convert const & instance);
 		void		print_char() const;
 		void		print_int() const;
