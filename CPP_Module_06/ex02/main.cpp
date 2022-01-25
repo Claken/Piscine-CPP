@@ -1,16 +1,4 @@
-#include <iostream>
-#include <stdlib.h>
-#include <exception>
-
-class Base
-{
-	public :
-	virtual ~Base() {}
-};
-
-class A : public Base {};
-class B : public Base {};
-class C : public Base {};
+#include "Base.hpp"
 
 Base*	generate(void)
 {
@@ -18,14 +6,17 @@ Base*	generate(void)
 	int i = rand() % 3;
 	if (i == 0)
 	{
+		std::cout << "The type generated is A" << std::endl;
 		return (new A());
 	}
 	else if (i == 1)
 	{
+		std::cout << "The type generated is B" << std::endl;
 		return (new B());
 	}
 	else
 	{
+		std::cout << "The type generated is C" << std::endl;
 		return (new C());
 	}
 	return (NULL);
@@ -71,9 +62,9 @@ int		main(void)
 	Base	*inst1 = generate();
 	Base&	inst2 = *inst1;
 
-	std::cout << "identify (pointer)   : ";
+	std::cout << "identify (pointer)  : ";
 	identify(inst1);
-	std::cout << "identify (reference) : ";
+	std::cout << "identify (reference): ";
 	identify(inst2);
 	delete inst1;
 	return (0);
