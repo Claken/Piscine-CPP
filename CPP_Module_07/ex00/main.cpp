@@ -14,11 +14,11 @@ int		main( void )
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 
 	std::string c = "chaine1";
-	std::string d = "chaine2";
+	std::string d = "chaine2.0";
 
 	std::cout << "before swap" << std::endl;
 	std::cout << "c = " << c << ", d = " << d << std::endl;
-	::swap(c, d);
+	::swap( c, d );
 	std::cout << "after swap" << std::endl;
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;

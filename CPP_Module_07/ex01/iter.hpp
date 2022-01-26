@@ -15,4 +15,26 @@ void		iter(T a[], int length, void (*f)(T))
 	}
 }
 
+template<typename T>
+void		iter(T a[], int length, void (*function)(T const &))
+{
+	int i = 0;
+	while (i < length)
+	{
+		function(a[i]);
+		i++;
+	}
+}
+
+template<typename T>
+void		iter(T a[], int length, void (*function)(T &))
+{
+	int i = 0;
+	while (i < length)
+	{
+		function(a[i]);
+		i++;
+	}
+}
+
 #endif

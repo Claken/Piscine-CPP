@@ -1,40 +1,20 @@
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <sstream>
-#include <math.h>
-#include <climits>
-#include <stdlib.h>
+#include "Convert.hpp"
 
 int
 	main(int ac, char **av)
 {
 	if (ac != 2)
+	{
+		std::cout << "You need ONE argument" << std::endl;
 		return (-1);
+	}
 
-	double conv;
+	Convert conv(av[1]);
 
-	conv = strtod(av[1], NULL);
-
-	char	a = static_cast<char>(conv);
-	int		b = static_cast<int>(conv);
-	float	c = static_cast<float>(conv);
-	double	d = static_cast<double>(conv);
-	std::cout << "char   : ";
-	if (std::isnan(conv) || std::isinf(conv))
-		std::cout << "impossible" << std::endl;
-	else if (!std::isprint(a))
-		std::cout << "Non displayable" << std::endl;
-	else
-		std::cout << "'" << a << "'" << std::endl;
-
-	std::cout << "int    : ";
-	if (!std::isnan(conv) && !std::isinf(conv))
-		std::cout << b << std::endl;
-	else
-		std::cout << "impossible" << std::endl;
-
-	std::cout << "float  : " << std::fixed << std::setprecision(1) << c << "f" << std::endl;
-	std::cout << "double : " << std::fixed << std::setprecision(1) << d << std::endl;
+	conv.print_char();
+	conv.print_int();
+	conv.print_float();
+	conv.print_double();
+	
 	return 0;
 }

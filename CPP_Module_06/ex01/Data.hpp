@@ -8,13 +8,18 @@
 class Data
 {
 	private :
-		int			_value;
+		int			_ivalue;
+		float		_fvalue;
+		char		_cvalue;
 	public :
-		Data() : _value(0) {};
+		Data() : _ivalue(0), _fvalue(0), _cvalue(0) {};
+		Data(int i, float f, char c);
 		Data(const Data & instance);
 		virtual ~Data() {};
-		int			getValue() const;
-		Data&		operator=(const int value);
+		int			getIValue() const;
+		float		getFValue() const;
+		char		getCValue() const;
+		Data&		operator=(Data const & instance);
 };
 
 #endif

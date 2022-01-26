@@ -13,24 +13,33 @@ Data*		deserialize(uintptr_t raw)
 int
 	main(void)
 {
-	Data		*ptr = new Data();
+	Data		*ptr = new Data(12, 24.2, 'a');
 	uintptr_t	raw;
 	Data*		deserializedPtr = NULL;
 
-	std::cout << "ptr value  = " << ptr->getValue() << std::endl;
-	*ptr = 12;
-	std::cout << "ptr value  = " << ptr->getValue() << std::endl;
-	std::cout << "ptr adress = " << ptr << std::endl;
+	std::cout << "ptr c value              = " << ptr->getCValue() << std::endl;
+	std::cout << "ptr f value              = " << ptr->getFValue() << std::endl;
+	std::cout << "ptr i value              = " << ptr->getIValue() << std::endl;
+	std::cout << "ptr adress               = " << ptr << std::endl;
+	std::cout << std::endl;
 
 	raw = serialize(ptr);
 
-	std::cout << "raw adress = " << raw << std::endl;
+	std::cout << "raw adress               = " << raw << std::endl;
+	std::cout << std::endl;
 
 	deserializedPtr = deserialize(raw);
 
-	std::cout << "deserializedPtr value  = " << deserializedPtr->getValue() << std::endl;
-	std::cout << "deserializedPtr adress = " << deserializedPtr << std::endl;
-	
+	std::cout << "deserializedPtr c value  = " << deserializedPtr->getCValue() << std::endl;
+	std::cout << "deserializedPtr f value  = " << deserializedPtr->getFValue() << std::endl;
+	std::cout << "deserializedPtr i value  = " << deserializedPtr->getIValue() << std::endl;
+	std::cout << "deserializedPtr adress   = " << deserializedPtr << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "ptr adress               = " << ptr << std::endl;
+	std::cout << "deserializedPtr adress   = " << deserializedPtr << std::endl;
+
 	delete ptr;
+
 	return (0);
 }

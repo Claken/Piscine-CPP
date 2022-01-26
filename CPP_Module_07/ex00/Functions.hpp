@@ -1,6 +1,4 @@
-#ifndef FUNCTIONS_HPP
-
-#define FUNCTIONS_HPP
+#pragma once
 
 #include <iostream>
 
@@ -29,5 +27,3 @@ T const &	min(T const & a, T const & b)
 		return (a);
 	return (b);
 }
-
-#endif
