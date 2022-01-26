@@ -55,7 +55,8 @@ int main(int, char**)
 
 	std::cout << "Scope : tmp = numbers & test(tmp)" << std::endl;
 	{
-		Array<int> tmp = numbers;
+		Array<int> tmp;
+		tmp = numbers;
 		Array<int> test(tmp);
 		std::cout << "tmp.size()  : " << tmp.size() << std::endl;
 		std::cout << "test.size() : " << test.size() << std::endl;
@@ -96,7 +97,6 @@ int main(int, char**)
 	std::cout << "after rand()" << std::endl;
 	for (int i = 0; i < MAX_VAL; i++)
 		std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
-	std::cout << std::endl;
 
 	delete[] mirror;
 	
