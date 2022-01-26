@@ -26,7 +26,7 @@ unsigned int	Span::shortestSpan() const
 		it2 = this->_list.begin();
 		while (it2 != this->_list.end())
 		{
-			if (*it != *it2)
+			if (it != it2)
 			{
 				if (span > abs(*it - *it2))
 					span = abs(*it - *it2);
@@ -54,7 +54,7 @@ unsigned int	Span::longestSpan() const
 		it2 = this->_list.begin();
 		while (it2 != this->_list.end())
 		{
-			if (*it != *it2)
+			if (it != it2)
 			{
 				if (span < abs(*it - *it2))
 					span = abs(*it - *it2);

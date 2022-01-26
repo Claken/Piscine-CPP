@@ -1,5 +1,7 @@
 #include "Span.hpp"
 
+# define NB 10000
+
 int main()
 {
 	Span sp = Span(5);
@@ -49,6 +51,31 @@ int main()
 
 	std::cout << "nsp.shortestSpan() = " << nsp.shortestSpan() << std::endl;
 	std::cout << "nsp.longestSpan()  = " << nsp.longestSpan() << std::endl;
+
+	Span nnsp = Span(NB);
+
+	std::list<int> listone(NB);
+
+	for (unsigned int i = 0; i < NB; i++)
+	{
+		//std::cout << i << std::endl;
+		listone.push_back(i * 2);
+	}
+
+	std::list<int>::iterator iit = listone.begin();
+	std::list<int>::iterator iit2 = listone.end();
+
+	try
+	{
+		nnsp.addNumber(iit, iit2);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << "nsp.shortestSpan() = " << nnsp.shortestSpan() << std::endl;
+	std::cout << "nsp.longestSpan()  = " << nnsp.longestSpan() << std::endl;
 
 	return 0;
 }
