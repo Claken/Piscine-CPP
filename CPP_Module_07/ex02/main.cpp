@@ -26,6 +26,7 @@ int main(int, char**)
 
 	for (int i = 0; i < 4; i++)
 		std::cout << letters[i] << std::endl;
+	std::cout << "letters.size() : " << letters.size() << std::endl;
 	std::cout << std::endl;
 
 	Array<int> numbers(MAX_VAL);
@@ -98,6 +99,6 @@ int main(int, char**)
 	std::cout << std::endl;
 
 	delete[] mirror;
-
+	
 	return 0;
 }
