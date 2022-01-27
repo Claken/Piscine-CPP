@@ -6,6 +6,15 @@
 #include <vector>
 #include <deque>
 
+class NotFound : public std::exception
+{
+    public :
+    virtual const char* what() const throw()
+    {
+        return ("the number wasn't (easy) found");
+    }
+};
+
 template<typename T>
 int    easyfind(T const & lst, int nb)
 {
@@ -18,5 +27,5 @@ int    easyfind(T const & lst, int nb)
             return (*it);
         ++it;
     }
-    throw (std::exception());
+    throw (NotFound());
 }
