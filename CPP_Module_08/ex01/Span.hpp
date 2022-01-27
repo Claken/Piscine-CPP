@@ -22,7 +22,7 @@ class Span
 			public :
 			virtual const char * what() const throw()
 			{
-				return ("Exception : cannot store any more numbers");
+				return ("Exception : cannot add the number");
 			}
 		};
 
