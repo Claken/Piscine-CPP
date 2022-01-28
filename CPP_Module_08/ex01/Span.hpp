@@ -1,11 +1,9 @@
 #pragma once
 
-#include <iostream>
 #include <exception>
-#include <list>
-#include <vector>
-#include <stdlib.h>
 #include <climits>
+#include <algorithm>
+#include <vector>
 
 class Span
 {
@@ -13,7 +11,7 @@ class Span
 
 		unsigned int			_size;
 		unsigned int			_index;
-		std::list<int>			_list;
+		std::vector<int>		_vect;
 
 	public:
 
@@ -31,7 +29,7 @@ class Span
 			public :
 			virtual const char * what() const throw()
 			{
-				return ("Exception : no span can be found in this list");
+				return ("Exception : no span can be found in this container");
 			}
 		};
 
@@ -52,7 +50,7 @@ class Span
 			{
 				if (this->_index < this->_size)
 				{
-					this->_list.push_back(*it);
+					this->_vect.push_back(*it);
 					this->_index++;
 				}
 				else

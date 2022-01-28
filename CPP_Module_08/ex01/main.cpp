@@ -1,23 +1,27 @@
 #include "Span.hpp"
 #include <unistd.h>
+#include <list>
+#include <stdlib.h>
+#include <iostream>
 
-# define NB 15000
+# define NB 100000
 
 int main()
 {
 	Span sp = Span(5);
+	std::cout << "Span sp = Span(5)" << std::endl;
 	try
 	{
 		std::cout << "sp.addNumber(6)" << std::endl;
 		sp.addNumber(6);
 		std::cout << "sp.addNumber(3)" << std::endl;
 		sp.addNumber(3);
-		std::cout << "sp.addNumber(17)" << std::endl;
-		sp.addNumber(17);
-		std::cout << "sp.addNumber(9)" << std::endl;
-		sp.addNumber(9);
 		std::cout << "sp.addNumber(11)" << std::endl;
 		sp.addNumber(11);
+		std::cout << "sp.addNumber(9)" << std::endl;
+		sp.addNumber(9);
+		std::cout << "sp.addNumber(17)" << std::endl;
+		sp.addNumber(17);
 		std::cout << "sp.addNumber(12) : ";
 		sp.addNumber(12);
 	}
@@ -33,18 +37,20 @@ int main()
 
 	Span nsp = Span(5);
 
+	std::cout << "Span nsp = Span(5)" << std::endl;
+
 	std::vector<int> vect1;
 
 	vect1.push_back(7);
-	vect1.push_back(8);
-	vect1.push_back(50);
 	vect1.push_back(100);
+	vect1.push_back(50);
+	vect1.push_back(8);
 
 	std::vector<int>::iterator it = vect1.begin();
 	std::vector<int>::iterator it2 = vect1.end();
 	try
 	{
-		std::cout << "addNumber from vect1 (7, 8, 50, 100)" << std::endl;
+		std::cout << "addNumber from vect1 (7, 100, 50, 8)" << std::endl;
 		nsp.addNumber(it, it2);
 	}
 	catch (std::exception & e)
@@ -58,6 +64,8 @@ int main()
 	std::cout << std::endl;
 
 	Span nnsp = Span(NB);
+	
+	std::cout << "Span nnsp = Span(" << NB << ")" << std::endl;
 
 	std::list<int> listone;
 
@@ -121,5 +129,11 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
+	Span	sp2(2);
+
+	sp2.addNumber(1);
+
+	sp = sp2;
+	sp2.addNumber(2);
 	return 0;
 }

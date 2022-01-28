@@ -1,31 +1,31 @@
 #pragma once
 
-#include <iostream>
 #include <exception>
-#include <list>
-#include <vector>
-#include <deque>
+#include <algorithm>
 
 class NotFound : public std::exception
 {
-    public :
-    virtual const char* what() const throw()
-    {
-        return ("the number wasn't (easy) found");
-    }
+	public :
+	virtual const char* what() const throw()
+	{
+		return ("the number wasn't (easy) found");
+	}
 };
 
 template<typename T>
-int    easyfind(T const & lst, int nb)
+typename T::iterator easyfind(T & c, int const & nb)
 {
-    typename T::const_iterator it;
+	typename T::iterator it = std::find(c.begin(), c.end(), nb);
+	if (it == c.end())
+		throw (NotFound());
+	return (it);
+}
 
-    it = lst.begin();
-    while (it != lst.end())
-    {
-        if (*it == nb)
-            return (*it);
-        ++it;
-    }
-    throw (NotFound());
+template<typename T>
+typename T::const_iterator easyfind(T const & c, int const & nb)
+{
+	typename T::const_iterator it = std::find(c.begin(), c.end(), nb);
+	if (it == c.end())
+		throw (NotFound());
+	return (it);
 }

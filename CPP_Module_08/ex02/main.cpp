@@ -26,6 +26,7 @@ int main()
 	cit--;
 	while (cit != cite)
 	{
+		//*cit = 1;
 		std::cout << "mstack const_iterator : " << *cit << std::endl;
 		cit++;
 	}
@@ -40,6 +41,7 @@ int main()
 	crit--;
 	while (crit != crite)
 	{
+		//*crit = 1;
 		std::cout << "mstack const_reverse_iterator : " << *crit << std::endl;
 		crit++;
 	}
