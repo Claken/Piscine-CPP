@@ -84,24 +84,18 @@ int main( void )
 	std::cout << "c == " << c << std::endl;
 	std::cout << "d == " << d << std::endl;
 	std::cout << "e == " << e << std::endl;
-	c / d;
 	std::cout << "c / d == ";
-	std::cout << c << std::endl;
-	c * d;
+	std::cout << c / d << std::endl;
 	std::cout << "c * d == ";
-	std::cout << c << std::endl;
-	c - d;
+	std::cout << c * d << std::endl;
 	std::cout << "c - d == ";
-	std::cout << c << std::endl;
-	c + d;
+	std::cout << c - d << std::endl;
 	std::cout << "c + d == ";
-	std::cout << c << std::endl;
-	c / e;
+	std::cout << c + d << std::endl;
 	std::cout << "c / e == ";
-	std::cout << c << std::endl;
-	c * e;
+	std::cout << c / e << std::endl;
 	std::cout << "c * e == ";
-	std::cout << c << std::endl;
+	std::cout << c * e << std::endl;
 
 	return 0;
 }

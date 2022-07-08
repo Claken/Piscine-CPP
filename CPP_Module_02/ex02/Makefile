@@ -17,11 +17,13 @@ CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRC			=	main.cpp \
 				Fixed.cpp \
 
+INC			= 	Fixed.hpp
+
 OBJ			=	$(SRC:%.cpp=%.o)
 
 all:		$(NAME)
 
-$(NAME):	$(OBJ)
+$(NAME):	$(OBJ) $(INC)
 			$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:

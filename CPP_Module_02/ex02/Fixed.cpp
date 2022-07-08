@@ -41,30 +41,32 @@ Fixed&			Fixed::operator=(Fixed const & instance)
 	return (*this);
 }
 
-Fixed&			Fixed::operator+(Fixed const & instance)
+Fixed			Fixed::operator+(Fixed const & instance)
 {
-	this->_rawBits += instance.getRawBits();
-	return (*this);
+	Fixed copy;
+	copy.setRawBits(this->_rawBits + instance.getRawBits());
+	return (copy);
 }
 
-Fixed&			Fixed::operator-(Fixed const & instance)
+Fixed			Fixed::operator-(Fixed const & instance)
 {
-	this->_rawBits -= instance.getRawBits();
-	return (*this);
+	Fixed copy;
+	copy.setRawBits(this->_rawBits - instance.getRawBits());
+	return (copy);
 }
 
-Fixed&			Fixed::operator*(Fixed const & instance)
+Fixed			Fixed::operator*(Fixed const & instance)
 {
-	this->_rawBits = (int64_t)this->_rawBits
-		* (int64_t)instance.getRawBits() / (1 << this->_fracBitsNb);
-	return (*this);
+	Fixed copy;
+	copy.setRawBits((int64_t)this->_rawBits * (int64_t)instance.getRawBits() / (1 << this->_fracBitsNb));
+	return (copy);
 }
 
-Fixed&			Fixed::operator/(Fixed const & instance)
+Fixed			Fixed::operator/(Fixed const & instance)
 {
-	this->_rawBits = ((int64_t)this->_rawBits
-		* (1 << this->_fracBitsNb)) / instance.getRawBits();
-	return (*this);
+	Fixed copy;
+	copy.setRawBits(((int64_t)this->_rawBits * (1 << this->_fracBitsNb)) / instance.getRawBits());
+	return (copy);
 }
 
 bool			Fixed::operator!=(Fixed const & instance) const

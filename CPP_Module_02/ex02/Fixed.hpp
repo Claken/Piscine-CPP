@@ -21,10 +21,11 @@ class Fixed
 	~Fixed(void) {};
 
 	Fixed&	operator=(Fixed const & instance);
-	Fixed&	operator+(Fixed const & instance);
-	Fixed&	operator-(Fixed const & instance);
-	Fixed&	operator*(Fixed const & instance);
-	Fixed&	operator/(Fixed const & instance);
+	
+	Fixed	operator+(Fixed const & instance);
+	Fixed	operator-(Fixed const & instance);
+	Fixed	operator*(Fixed const & instance);
+	Fixed	operator/(Fixed const & instance);
 
 	Fixed&	operator++();
 	Fixed	operator++(int);
